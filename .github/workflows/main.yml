@@ -10,5 +10,6 @@ jobs:
 
     steps:
       - name: print a welcome message
-      runs: echo "welcome to our first github actions workflow!"
+        run: echo "Welcome to our first GitHub Actions workflow!"
+      
       

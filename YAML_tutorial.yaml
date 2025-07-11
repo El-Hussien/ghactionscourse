@@ -1,0 +1,75 @@
+# this file defines the username
+# key: value
+name: Hussien
+
+#data types 
+  #1.scalar data type --> simple data types (integer, float, boolean, string, datetime)
+    username: Ahmed
+    age: 30
+    salary: 5320.54
+    is_active: true
+    employment_date: 2025-07-11T14:30:00Z  # Z means this was written in GMT timezone
+    
+    serial_number: "0055"    # string
+    regex: "^[A-Za-z]+:\\s" 
+  
+    path: "C:\\user\\admin"  # C:\user\admin
+    s_path: 'C:\user\admin'  # C:\user\admin
+  
+    msg: "hello\nworld"   # hello
+                          # world
+    s_msg: 'hello\nworld'  # hello\world
+  
+    long_message: |
+      this is 
+      a long message
+      multiline message!
+      #output
+        # this is 
+        # a long message
+        # multiline message!
+
+    long_message: >
+      this is 
+      a long message
+      multiline message!
+      #output
+        # this is a long message multiline message!
+
+    employee:
+      name: salah
+      age: 35
+      contact:   # --> map
+        email: salahmohamed@gmail.com
+
+    employees:
+      - name: salah   # --> list
+        age: 35
+        contact:   # --> map
+          email: salahmohamed@gmail.com
+      - name: sara
+        age: 31
+        contact:  
+          email: sarahossam@gmail.com
+
+    servers:
+      production:
+        - host: prod1@example.com
+          ip: 192.168.1.10
+        - host: prod2@example.com
+          ip: 192.168.1.20
+      staging:
+        - host: stage1@example.com
+          ip: 192.168.2.10
+        - host: stage2@example.com
+          ip: 192.168.2.20
+      development:
+        - host: dev1@example.com
+          ip: 192.168.3.10
+        - host: dev2@example.com 
+          ip: 192.168.3.20
+          
+
+        
+  
+

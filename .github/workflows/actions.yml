@@ -1,0 +1,45 @@
+on:
+  workflow_dispatch:
+
+jobs:
+  actions-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: say hello
+        uses: .github/actions/Greeting@v1
+        with:
+          name: hussien
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  hybrid_job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Run a command on ubuntu VM
+      run: echo "This runs on ubuntu VM"
+
+    - name: Run inside Alpine container
+      uses: docker://alpine:3.14 
+      with:
+        entrypoint: /bin/sh
+        args: |
+          -c "echo 'This run inside an alpine container'"
+
+    - name: Run another command inside ubuntu VM
+      run: echo "Back to the VM"
+
+  dockerized_job:
+    runs-on: ubuntu-latest
+    container: 
+      image: ghcr.io/my-org/my-private-image:latest
+      credentials:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+    steps:
+      - run: node --version
+      - run: echo "This job runs inside a node.js container"
+      
+          
+              
+  
+          

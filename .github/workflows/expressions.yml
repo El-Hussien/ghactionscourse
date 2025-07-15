@@ -3,6 +3,7 @@ on:
 
 jobs:
   expressions:
+    runs-on: ubuntu-latest
     steps:
     - name: print a message
       run: echo "this job is running"

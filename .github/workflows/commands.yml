@@ -16,4 +16,13 @@ jobs:
     - name: Use API key
       run: echo "Using API Key $API_KEY"
 
-    
+  checking:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check if a file exist
+      run: |
+        if [ -f "config.yaml" ]; then
+          echo "::debug::config.yaml exists"
+        else
+          echo "::error::config.yaml is missing"
+        fi

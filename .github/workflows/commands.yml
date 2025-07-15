@@ -14,7 +14,9 @@ jobs:
     - name: Set API key
       run: echo "API_KEY=12345" >> $GITHUB_ENV
     - name: Use API key
-      run: echo "Using API Key $API_KEY"
+      run: |
+        echo "::add-mask::$API_KEY"
+        echo "Using API Key $API_KEY"
 
   checking:
     runs-on: ubuntu-latest
